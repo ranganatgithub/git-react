@@ -7,3 +7,12 @@ before_install:
 
 script:
   - docker run -e CI=true chiranth12/git-react npm run test
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"  # Replace with your region code
+  app: "docker"  # Replace with your Application Name
+  env: "docker-env"  # Replace with your environment name in lowercase
+  bucket_name: "elasticbeanstalk-eu-north-1-381825305920"  # Replace with your S3 bucket name
+  bucket_path: "docker"  # Set the bucket path to 'docker'
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"

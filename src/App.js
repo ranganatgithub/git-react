@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          i was changed long time ago!
+          Hi this is travis-beanstalk ci
         </p>
         <a
           className="App-link"

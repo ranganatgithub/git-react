@@ -10,12 +10,13 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-1"  # Replace with your region code
-  app: "frontend"  # Replace with your Application Name
-  env: "frontend-env"  # Replace with your environment name in lowercase
-  bucket_name: "elasticbeanstalk-us-east-1-381825305920"  # Replace with your S3 bucket name
+  dpl_version: 1.10.16  # Preserve the current version of dpl
+  region: "us-east-1"
+  app: "frontend"
+  env: "frontend-env"
+  bucket_name: "elasticbeanstalk-us-east-1-381825305920"
   bucket_path: "frontend"
   on:
-    branch: main  # Deploy only from the main branch
+    branch: main
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"

@@ -7,14 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true chiranth12/git-react npm run test
+
 deploy:
   provider: elasticbeanstalk
-  region:"us-east-1"  # Replace with your region code
+  region: "us-east-1"  # Replace with your region code
   app: "frontend"  # Replace with your Application Name
-  env: "Frontend-env"  # Replace with your environment name in lowercase
+  env: "frontend-env"  # Replace with your environment name in lowercase
   bucket_name: "elasticbeanstalk-us-east-1-381825305920"  # Replace with your S3 bucket name
   bucket_path: "frontend"
   on:
-    branch: main  # Set the bucket path to 'docker'
+    branch: main  # Deploy only from the main branch
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
